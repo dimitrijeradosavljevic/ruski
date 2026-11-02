@@ -14,13 +14,7 @@ var cas2 = [
     { srb: "Sat ruskog jezika", rus: "Урок русского языка" },
     { srb: "Susret s prijateljima", rus: "Встреча с друзьями" },
     { srb: "Posjet muzeju", rus: "Посещение музея" },
-
-    // --- SEKCIJA 2: Idealan jesenji dan (Hrana, Večer, Noć) ---
-    { 
-        sekcija: "2. Hrana, večer i noć", 
-        srb: "Juha od bundeve", 
-        rus: "Тыквенный суп" 
-    },
+    { srb: "Juha od bundeve", rus: "Тыквенный суп" },
     { srb: "Pita od jabuka", rus: "Яблочный пирог" },
     { srb: "Vruća čokolada", rus: "Горячий шоколад" },
     { srb: "Tjestenina s gljivama", rus: "Паста с грибами" },
