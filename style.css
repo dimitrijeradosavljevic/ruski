@@ -11,15 +11,17 @@ body {
     overflow-x: hidden;
 }
 
+/* Glavni kontejner */
 .main-layout {
     display: flex;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     align-items: center; 
-    padding: 0 50px;
+    padding: 20px 50px;
     gap: 40px;
 }
 
+/* Sidebar stilovi */
 .sidebar {
     width: 320px;
     background: white;
@@ -82,6 +84,7 @@ body {
     font-weight: bold;
 }
 
+/* Glavni dio sa karticama */
 .app-container {
     flex: 1;
     display: flex;
@@ -89,6 +92,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
+    width: 100%;
 }
 
 header {
@@ -102,6 +106,7 @@ header {
     color: #7f8c8d;
 }
 
+/* Kartica */
 .flashcard-container {
     background-color: transparent;
     width: 100%;
@@ -148,7 +153,6 @@ header {
     transform: rotateX(180deg);
 }
 
-/* Polje za klik (okretanje kartice) sada zauzima samo središnji dio */
 .card-content {
     flex: 1;
     height: 100%;
@@ -156,7 +160,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 20px;
     cursor: pointer;
 }
 
@@ -164,17 +168,17 @@ header {
     font-size: 2.2rem;
     font-weight: 500;
     line-height: 1.4;
-    word-break: break-word; /* Sprečava izlazak dugog teksta */
+    word-break: break-word; 
 }
 
 .hint {
     position: absolute;
-    bottom: 25px;
+    bottom: 20px;
     font-size: 1rem;
     color: #7f8c8d;
 }
 
-/* Dizajn unutrašnjih kontrola na kartici */
+/* Kontrole unutar kartice */
 .nav-btn {
     background: transparent;
     border: none;
@@ -199,7 +203,6 @@ header {
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* Blago zaobljavanje ivica na klik pozadini (hover) */
 .flashcard-front .prev-btn, .flashcard-back .prev-btn {
     border-top-left-radius: 16px;
     border-bottom-left-radius: 16px;
@@ -210,21 +213,75 @@ header {
     border-bottom-right-radius: 16px;
 }
 
+/* ========================================================
+   RESPONSIVE (PRILAGODBA ZA MANJE EKRANE I MOBITELE)
+   ======================================================== */
+
+/* Tableti i manji desktopi */
 @media (max-width: 1100px) {
     .main-layout {
         flex-direction: column;
-        height: auto;
         padding: 20px;
+        gap: 20px;
     }
+
     .sidebar {
         width: 100%;
         max-width: 850px;
-        max-height: 350px;
+        max-height: 300px; /* Malo manja visina da kartica ostane vidljiva */
     }
+
     .flashcard-container {
         height: 350px;
     }
+
     #srb-text, #rus-text {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
+    }
+}
+
+/* Mobilni telefoni (uspravni položaj) */
+@media (max-width: 768px) {
+    .main-layout {
+        padding: 15px 10px; 
+    }
+
+    .sidebar {
+        max-height: none; /* Na mobitelu dopusti da se raširi koliko treba */
+        padding: 15px;
+    }
+
+    .flashcard-container {
+        height: 320px; /* Prilagođena visina za mobitel */
+        margin-bottom: 20px;
+    }
+
+    #srb-text, #rus-text {
+        font-size: 1.4rem; /* Znatno manji tekst da stane na mobitel */
+    }
+
+    .nav-btn {
+        font-size: 2rem; /* Manje strelice */
+        padding: 0 10px;
+    }
+
+    .card-content {
+        padding: 10px; /* Manji unutarnji razmak na kartici */
+    }
+
+    .hint {
+        font-size: 0.85rem;
+        bottom: 10px;
+    }
+}
+
+/* Veoma mali ekrani (stariji pametni telefoni) */
+@media (max-width: 480px) {
+    .flashcard-container {
+        height: 300px;
+    }
+    
+    #srb-text, #rus-text {
+        font-size: 1.2rem;
     }
 }
