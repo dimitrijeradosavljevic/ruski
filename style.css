@@ -1,0 +1,230 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.main-layout {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center; 
+    padding: 0 50px;
+    gap: 40px;
+}
+
+.sidebar {
+    width: 320px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.lesson-select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    border: 2px solid #3498db;
+    background-color: white;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    cursor: pointer;
+    outline: none;
+    font-weight: bold;
+}
+
+.sidebar h3 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 8px;
+}
+
+.section-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.section-list li {
+    padding: 12px 15px;
+    background: #ecf0f1;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #34495e;
+    transition: all 0.2s ease;
+}
+
+.section-list li:hover {
+    background: #bdc3c7;
+}
+
+.section-list li.active {
+    background: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+.app-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#progress-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #7f8c8d;
+}
+
+.flashcard-container {
+    background-color: transparent;
+    width: 100%;
+    max-width: 850px;
+    height: 450px;
+    perspective: 1000px; 
+    margin-bottom: 40px;
+}
+
+.flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flashcard-container.flipped .flashcard-inner {
+    transform: rotateX(180deg);
+}
+
+.flashcard-front, .flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.flashcard-front {
+    background-color: #ffffff;
+    border-top: 8px solid #3498db;
+}
+
+.flashcard-back {
+    background-color: #34495e;
+    color: white;
+    transform: rotateX(180deg);
+}
+
+/* Polje za klik (okretanje kartice) sada zauzima samo središnji dio */
+.card-content {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    cursor: pointer;
+}
+
+#srb-text, #rus-text {
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 1.4;
+    word-break: break-word; /* Sprečava izlazak dugog teksta */
+}
+
+.hint {
+    position: absolute;
+    bottom: 25px;
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+
+/* Dizajn unutrašnjih kontrola na kartici */
+.nav-btn {
+    background: transparent;
+    border: none;
+    font-size: 3rem;
+    color: #bdc3c7;
+    height: 100%;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flashcard-front .nav-btn:hover {
+    color: #3498db;
+    background: rgba(52, 152, 219, 0.05);
+}
+
+.flashcard-back .nav-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Blago zaobljavanje ivica na klik pozadini (hover) */
+.flashcard-front .prev-btn, .flashcard-back .prev-btn {
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+
+.flashcard-front .next-btn, .flashcard-back .next-btn {
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+@media (max-width: 1100px) {
+    .main-layout {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+    .sidebar {
+        width: 100%;
+        max-width: 850px;
+        max-height: 350px;
+    }
+    .flashcard-container {
+        height: 350px;
+    }
+    #srb-text, #rus-text {
+        font-size: 1.6rem;
+    }
+}

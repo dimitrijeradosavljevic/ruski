@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Učenje Ruskog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-layout">
+        <aside class="sidebar">
+            <select id="lesson-select" class="lesson-select"></select>
+            <h3 id="sekcije-naslov">Sekcije</h3>
+            <ul id="section-list" class="section-list">
+                <!-- Sekcije idu ovde -->
+            </ul>
+        </aside>
+
+        <div class="app-container">
+            <header>
+                <p id="progress-text">0 / 0</p>
+            </header>
+
+            <!-- Kartica sa ugrađenim kontrolama -->
+            <div class="flashcard-container" id="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <button class="nav-btn prev-btn">❮</button>
+                        <div class="card-content">
+                            <p id="srb-text">Učitavanje...</p>
+                            <span class="hint">Klikni sredinu da okreneš</span>
+                        </div>
+                        <button class="nav-btn next-btn">❯</button>
+                    </div>
+                    <div class="flashcard-back">
+                        <button class="nav-btn prev-btn">❮</button>
+                        <div class="card-content">
+                            <p id="rus-text">Učitavanje...</p>
+                        </div>
+                        <button class="nav-btn next-btn">❯</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="data/katalog.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
