@@ -12,6 +12,12 @@ const katalogCasova = [
         varijabla: "cas2" 
     },
     { 
+        id: "cas3", 
+        naziv: "3. 21.9: Raspolozenje i Где, Когда, Какой, Куда...", 
+        fajl: "data/cas3.js", 
+        varijabla: "cas3" 
+    },
+    { 
         id: "cas14", 
         naziv: "14. 28.10: Svakodnevne situacije i navike", 
         fajl: "data/cas14.js", 
