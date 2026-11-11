@@ -30,6 +30,18 @@ const katalogCasova = [
         varijabla: "cas15" 
     },
     { 
+        id: "cas16", 
+        naziv: "16. 4.11: Встречи", 
+        fajl: "data/cas16.js", 
+        varijabla: "cas16" 
+    },
+    { 
+        id: "cas17", 
+        naziv: "17. 9.11: Brzi sastanci", 
+        fajl: "data/cas17.js", 
+        varijabla: "cas17" 
+    },
+    { 
         id: "glagoli_vid", 
         naziv: "Glagolski vid: Svršeni i nesvršeni glagoli", 
         fajl: "data/glagoli_vid.js", 
